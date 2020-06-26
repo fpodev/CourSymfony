@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PinsController!{% endblock %}
+{% block title %}All pins{% endblock %}
 
 {% block body %}
 <style>
@@ -9,19 +9,22 @@
 </style>
 
 <div class="example-wrapper">
+   <h1>All pins</h1>
+
    
+  <a href="{{ path('app_pins_create') }}">pin create</a>
+
   
-   {% for pin in pins %}
-    <article>
-    <h1>{{ pin.title }}</h1>
-    <p>{{ pin.description }}</p>
-    </article>
-{% endfor %}
-    This friendly message 
-    is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/public/clonePinterest/src/Controller/PinsController.php'|file_link(0) }}">src/Controller/PinsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/public/clonePinterest/templates/pins/index.html.twig'|file_link(0) }}">templates/pins/index.html.twig</a></code></li>
-    </ul>
+      {% for pin in pins %}
+            <article>
+
+                <h1><a href="{{ path('app_pins_show', {'id': pin.id}) }}">{{ pin.title }}</a></h1>
+
+                <p>{{ pin.description }}</p>
+
+            </article>      
+      {% else %}  
+            <p>Aucun pin</p>
+      {% endfor %}
 </div>
 {% endblock %}
