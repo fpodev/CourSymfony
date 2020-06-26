@@ -5,7 +5,22 @@ Desc: description
 Created:  2020-06-23T14:23:27.217Z
 Modified: !date!
 #}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create pins</title>
+</head>
+<body>
+    <h1>Create pins</h1>
+    {{ form_start(monFormulaire) }}
+        {{ form_widget(monFormulaire) }}
+        <input type="submit" value="create_pins">
+    {{ form_end(monFormulaire) }} 
+ 
+     
+</body>
+</html>
 
-<h1>Create pins</h1>
- {{ form(monFormulaire) }}
-    
+
